@@ -1,0 +1,29 @@
+name: Emby Date Updater
+
+on:
+  schedule:
+    - cron: "0 12 * * *"  # Runs daily at 10 AM UTC
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update_emby_dates:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Script
+        env:
+          EMBY_HOST: ${{ secrets.EMBY_HOST }}
+          EMBY_API_KEY: ${{ secrets.EMBY_API_KEY }}
+          EMBY_USER_ID: ${{ secrets.EMBY_USER_ID }}
+        run: python update_emby_dates.py
