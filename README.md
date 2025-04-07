@@ -16,11 +16,11 @@ This repository automates the process of updating the `DateAdded` field for medi
    - Go to the repository settings.
    - Under `Secrets and variables`, navigate to `Actions`, then click `New repository secret`.
    - Add the following secrets:
-   | Variable       | Description                                                                 |
-   |----------------|-----------------------------------------------------------------------------|
-   | `EMBY_API_KEY` | Go to the Emby API and generate one.                                        |
-   | `EMBY_HOST`    | Your own Emby public address.                                                |
-   | `EMBY_USER_ID` | Go to the Emby server user, select the host user, and copy the user ID from the URL. |
+| Variable       | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `EMBY_API_KEY` | Go to the Emby API and generate one.                                        |
+| `EMBY_HOST`    | Your own Emby public address.                                                |
+| `EMBY_USER_ID` | Go to the Emby server user, select the host user, and copy the user ID from the URL. |
    
 2. **Configure Library IDs**:
    - Open `update_emby_dates.py` and replace the library IDs with your own.
